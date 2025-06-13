@@ -1,0 +1,1171 @@
+/* styles.css - Yardi URL Tester Pro Complete Styles - UPDATED */
+
+/* Hide Streamlit default elements */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+.stDeployButton {visibility: hidden;}
+
+/* Main app background */
+.stApp {
+    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 50%, #3d3d5c 100%);
+}
+
+/* Remove empty containers that cause unwanted boxes */
+.element-container:empty {
+    display: none !important;
+}
+
+.stMarkdown:empty {
+    display: none !important;
+}
+
+.stVerticalBlock > div:empty {
+    display: none !important;
+}
+
+.stHorizontalBlock > div:empty {
+    display: none !important;
+}
+
+div[data-testid="stVerticalBlock"] > div:empty {
+    display: none !important;
+}
+
+div[data-testid="stHorizontalBlock"] > div:empty {
+    display: none !important;
+}
+
+/* Enhanced header with better gradient */
+.professional-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8b5fbf 100%);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.professional-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.professional-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: -1px;
+    position: relative;
+    z-index: 1;
+}
+
+.professional-header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.95;
+    font-weight: 300;
+    position: relative;
+    z-index: 1;
+}
+
+/* UPDATED: Login/Signup Form Styling - Purple theme */
+.stTabs [data-baseweb="tab-panel"] form {
+    background: linear-gradient(145deg, #2a2d47 0%, #3a3d57 100%) !important;
+    padding: 2rem !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1) !important;
+    margin: 1rem auto !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: white !important;
+    position: relative !important;
+}
+
+/* Hide any floating Welcome Back divs outside of forms */
+.element-container:has(.stMarkdown:contains("Welcome Back!")) {
+    display: none !important;
+}
+
+/* Remove unwanted auth containers outside of forms */
+.auth-container {
+    display: none !important;
+}
+
+/* Perfect button centering */
+.center-button {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.center-button .stButton {
+    width: 200px !important;
+}
+
+.center-button .stButton > button {
+    width: 200px !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* UPDATED: UNIVERSAL TAB STYLING - Purple/Blue theme */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px !important;
+    background: transparent !important;
+    justify-content: center !important;
+    margin-bottom: 1rem !important;
+    border-bottom: none !important;
+}
+
+/* Default tab state - Inactive tabs */
+.stTabs [data-baseweb="tab"] {
+    background: linear-gradient(145deg, #4a5568, #667eea) !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+/* Hover state for inactive tabs */
+.stTabs [data-baseweb="tab"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4) !important;
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+}
+
+/* UPDATED: ACTIVE TAB STATE - Purple gradient instead of green */
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(139, 95, 191, 0.4) !important;
+    transform: translateY(-1px) !important;
+    border: 1px solid rgba(139, 95, 191, 0.3) !important;
+}
+
+/* Active tab hover state */
+.stTabs [aria-selected="true"]:hover {
+    background: linear-gradient(135deg, #7a4fa8 0%, #6a4190 100%) !important;
+    box-shadow: 0 6px 16px rgba(139, 95, 191, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Tab content styling */
+.stTabs > div > div > div > div > div {
+    padding-top: 0 !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    padding: 1rem 0 !important;
+    color: white !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Tab panel content text styling */
+.stTabs [data-baseweb="tab-panel"] h1,
+.stTabs [data-baseweb="tab-panel"] h2,
+.stTabs [data-baseweb="tab-panel"] h3,
+.stTabs [data-baseweb="tab-panel"] h4 {
+    color: white !important;
+    margin-bottom: 1rem !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] p {
+    color: #b0b0b0 !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] .stMarkdown {
+    color: white !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] .stMarkdown p {
+    color: #b0b0b0 !important;
+}
+
+/* Form styling */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+    color: #a0a0a0;
+    font-size: 1rem;
+}
+
+/* Input field styling */
+.stTextInput {
+    margin-bottom: 1.2rem !important;
+}
+
+.stTextInput > label {
+    margin-bottom: 0.5rem !important;
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+}
+
+.stTextInput > div > div > input {
+    background: linear-gradient(145deg, #1a1d2e, #252841) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 12px !important;
+    color: white !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2) !important;
+    outline: none !important;
+}
+
+.stTextInput > div > div > input::placeholder {
+    color: #6b7280 !important;
+    opacity: 0.8 !important;
+}
+
+/* Navigation container */
+.nav-container {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* UPDATED: Base button styling for ALL navigation buttons - Purple theme */
+.stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    cursor: pointer !important;
+    position: relative !important;
+    overflow: hidden !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    white-space: nowrap !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Enhanced hover effect for default buttons */
+.stButton > button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+}
+
+/* UPDATED: PRIMARY BUTTON STYLING - Purple instead of green for active navigation */
+button[data-testid*="primary"],
+.stButton[data-testid*="primary"] > button,
+div[data-testid="column"] button[kind="primary"],
+button[kind="primary"] {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 10px rgba(139, 95, 191, 0.4) !important;
+    color: white !important;
+    border: 1px solid rgba(139, 95, 191, 0.3) !important;
+    transform: translateY(-2px) !important;
+    font-weight: 700 !important;
+}
+
+button[data-testid*="primary"]:hover,
+.stButton[data-testid*="primary"] > button:hover,
+div[data-testid="column"] button[kind="primary"]:hover,
+button[kind="primary"]:hover {
+    background: linear-gradient(135deg, #7a4fa8 0%, #6a4190 100%) !important;
+    box-shadow: 0 5px 15px rgba(139, 95, 191, 0.5) !important;
+    transform: translateY(-3px) !important;
+    border: 1px solid rgba(139, 95, 191, 0.5) !important;
+}
+
+/* SECONDARY BUTTON STYLING - INACTIVE NAVIGATION TABS (Blue) */
+button[data-testid*="secondary"],
+.stButton[data-testid*="secondary"] > button,
+div[data-testid="column"] button[kind="secondary"],
+button[kind="secondary"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: 1px solid rgba(102, 126, 234, 0.2) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+    transform: none !important;
+}
+
+button[data-testid*="secondary"]:hover,
+.stButton[data-testid*="secondary"] > button:hover,
+div[data-testid="column"] button[kind="secondary"]:hover,
+button[kind="secondary"]:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* UPDATED: Form submit buttons - Purple theme */
+.center-button .stButton > button {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 10px rgba(139, 95, 191, 0.4) !important;
+    border: 1px solid rgba(139, 95, 191, 0.3) !important;
+    font-weight: 700 !important;
+}
+
+.center-button .stButton > button:hover {
+    background: linear-gradient(135deg, #7a4fa8 0%, #6a4190 100%) !important;
+    box-shadow: 0 5px 15px rgba(139, 95, 191, 0.5) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Fallback selectors for different Streamlit versions */
+.stButton > button:contains("Dashboard") {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.nav-container .stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.row-widget.stHorizontal > div:nth-child(1) .stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 10px rgba(139, 95, 191, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.row-widget.stHorizontal > div:nth-child(2) .stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 10px rgba(139, 95, 191, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.row-widget.stHorizontal > div:nth-child(3) .stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 10px rgba(139, 95, 191, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.row-widget.stHorizontal > div:nth-child(4) .stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 10px rgba(139, 95, 191, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.row-widget.stHorizontal > div:nth-child(5) .stButton > button[kind="primary"] {
+    background: linear-gradient(135deg, #8b5fbf 0%, #764ba2 100%) !important;
+    box-shadow: 0 3px 10px rgba(139, 95, 191, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* UPDATED: Active state indicator - Purple instead of green */
+.stButton[data-testid*="primary"] > button::after {
+    content: "●" !important;
+    position: absolute !important;
+    top: -2px !important;
+    right: -2px !important;
+    background: #8b5fbf !important;
+    border-radius: 50% !important;
+    width: 8px !important;
+    height: 8px !important;
+    font-size: 6px !important;
+    color: white !important;
+    text-align: center !important;
+    line-height: 8px !important;
+}
+
+/* Feature highlights */
+.feature-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 1.5rem !important;
+    margin-top: 3rem !important;
+    padding: 0 1rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57) !important;
+    padding: 2rem 1.5rem !important;
+    border-radius: 15px !important;
+    text-align: center !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    transition: transform 0.3s ease !important;
+    color: white !important;
+    height: auto !important;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
+}
+
+.feature-icon {
+    font-size: 3rem !important;
+    margin-bottom: 1rem !important;
+    color: #667eea !important;
+    display: block !important;
+    line-height: 1 !important;
+}
+
+.feature-title {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    color: white !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.3 !important;
+}
+
+.feature-desc {
+    color: #b0b0b0 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+}
+
+/* Dashboard cards */
+.dashboard-card {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    margin: 1rem 0;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+}
+
+/* UPDATED: Status styling - keeping original but making more consistent with purple theme */
+.job-status-running {
+    background: linear-gradient(90deg, #667eea 0%, #8b5fbf 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.job-status-completed {
+    background: linear-gradient(90deg, #56ab2f 0%, #a8e6cf 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.job-status-failed {
+    background: linear-gradient(90deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.job-status-pending {
+    background: linear-gradient(90deg, #ffa726 0%, #ffcc02 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.job-status-waiting {
+    background: linear-gradient(90deg, #9c27b0 0%, #e1bee7 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Results page styling */
+.results-header {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+}
+
+.results-header h1 {
+    color: white !important;
+    margin-bottom: 0.5rem;
+}
+
+.results-header .caption {
+    color: #b0b0b0 !important;
+    font-size: 0.9rem;
+}
+
+/* Metrics styling for results - all same height */
+.stMetric {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57) !important;
+    padding: 1rem !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    text-align: center !important;
+    min-height: 120px !important;
+    max-height: 120px !important;
+    height: 120px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.stMetric > div {
+    color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: 100% !important;
+}
+
+.stMetric [data-testid="metric-container"] {
+    background: transparent !important;
+    border: none !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.stMetric [data-testid="metric-container"] > div {
+    color: white !important;
+}
+
+.stMetric label {
+    color: #b0b0b0 !important;
+    font-size: 0.9rem !important;
+}
+
+/* UPDATED: Metric values - Purple accent instead of green */
+.stMetric [data-testid="metric-container"] [data-testid="metric-value"] {
+    color: #8b5fbf !important;
+    font-weight: bold !important;
+    font-size: 1.5rem !important;
+}
+
+.stMetric [data-testid="metric-container"] [data-testid="metric-delta"] {
+    color: #667eea !important;
+    font-size: 0.8rem !important;
+}
+
+/* Dataframe styling */
+.stDataFrame {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    overflow: hidden !important;
+}
+
+.stDataFrame [data-testid="stDataFrame"] {
+    background: transparent !important;
+}
+
+.stDataFrame table {
+    background: transparent !important;
+    color: white !important;
+}
+
+.stDataFrame th {
+    background: rgba(102, 126, 234, 0.2) !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.stDataFrame td {
+    color: white !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.stDataFrame tr:hover {
+    background: rgba(255,255,255,0.05) !important;
+}
+
+/* Selectbox styling */
+.stSelectbox {
+    margin-bottom: 1rem !important;
+}
+
+.stSelectbox > label {
+    color: white !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.stSelectbox > div > div {
+    background: linear-gradient(145deg, #1a1d2e, #252841) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 8px !important;
+}
+
+.stSelectbox > div > div > div {
+    color: white !important;
+}
+
+/* Expander styling */
+.stExpander {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 10px !important;
+    margin: 1rem 0 !important;
+}
+
+.stExpander > div > div > div > div {
+    color: white !important;
+}
+
+.stExpander [data-testid="stExpanderToggleIcon"] {
+    color: white !important;
+}
+
+.stExpander summary {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+/* Image styling for screenshots */
+.stImage {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* UPDATED: Status indicators for results - Purple accent */
+.status-pass {
+    background: linear-gradient(90deg, #8b5fbf 0%, #a855f7 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.status-fail {
+    background: linear-gradient(90deg, #ff416c 0%, #ff4b2b 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+/* Download button styling */
+.download-section {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin: 1rem 0;
+}
+
+/* UPDATED: Uniform download button styling - Purple theme */
+.stDownloadButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    height: 40px !important;
+    transition: all 0.3s ease !important;
+}
+
+.stDownloadButton > button:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Text area styling */
+.stTextArea textarea {
+    background: linear-gradient(145deg, #1a1d2e, #252841) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 8px !important;
+    color: white !important;
+    font-family: 'Courier New', monospace !important;
+}
+
+.stTextArea label {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+/* Code block styling */
+.stCode {
+    background: linear-gradient(145deg, #1a1d2e, #252841) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 8px !important;
+    color: white !important;
+}
+
+/* UPDATED: Success/Error message styling - Purple accents */
+.stAlert {
+    border-radius: 10px !important;
+    margin: 1rem 0 !important;
+    padding: 0.75rem 1rem !important;
+}
+
+.stSuccess {
+    background: linear-gradient(145deg, #8b5fbf, #764ba2) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.stError {
+    background: linear-gradient(145deg, #ef4444, #dc2626) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.stWarning {
+    background: linear-gradient(145deg, #f59e0b, #d97706) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.stInfo {
+    background: linear-gradient(145deg, #667eea, #764ba2) !important;
+    border: none !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+/* Error text styling */
+.error-text {
+    background: rgba(239, 68, 68, 0.1);
+    border-left: 3px solid #ef4444;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #ffcccb;
+}
+
+/* Ensure proper main container centering */
+.block-container {
+    padding-top: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Fix column spacing issues - COMPACT NAVIGATION */
+.row-widget.stHorizontal {
+    gap: 0.3rem !important;
+}
+
+/* Remove extra padding from streamlit elements */
+.stApp > div > div > div > div {
+    padding-top: 1rem !important;
+}
+
+/* Headers and text styling */
+h1, h2, h3, h4, h5, h6 {
+    color: white !important;
+}
+
+.stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4 {
+    color: white !important;
+}
+
+.stMarkdown p {
+    color: #b0b0b0 !important;
+}
+
+/* Caption styling */
+.caption {
+    color: #b0b0b0 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Subheader styling */
+.stSubheader {
+    color: white !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+}
+
+/* File uploader styling */
+.stFileUploader {
+    background: linear-gradient(145deg, #2a2d47, #3a3d57) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    border-radius: 10px !important;
+    padding: 1rem !important;
+}
+
+.stFileUploader label {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+.stFileUploader > div {
+    color: white !important;
+}
+
+/* Radio button styling */
+.stRadio > label {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+.stRadio > div {
+    color: white !important;
+}
+
+.stRadio [data-testid="stRadio"] > div {
+    color: white !important;
+}
+
+/* Checkbox styling */
+.stCheckbox > label {
+    color: white !important;
+    font-weight: 500 !important;
+}
+
+.stCheckbox > div {
+    color: white !important;
+}
+
+/* RESPONSIVE COMPACT BUTTONS */
+@media (max-width: 1200px) {
+    .stButton > button {
+        font-size: 0.8rem !important;
+        padding: 0.35rem 0.7rem !important;
+        height: 34px !important;
+        min-height: 34px !important;
+        max-height: 34px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .stButton > button {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.6rem !important;
+        height: 32px !important;
+        min-height: 32px !important;
+        max-height: 32px !important;
+        letter-spacing: 0.1px !important;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .professional-header {
+        padding: 2rem 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    .professional-header h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .professional-header p {
+        font-size: 1rem !important;
+    }
+
+    .stTabs [data-baseweb="tab-panel"] form {
+        width: 95% !important;
+        margin: 1rem auto !important;
+        padding: 1.5rem 1rem !important;
+        max-width: none !important;
+    }
+
+    .center-button .stButton > button {
+        width: 100% !important;
+        min-width: auto !important;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0 0.5rem !important;
+    }
+
+    .feature-card {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .block-container {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    .stTabs [data-baseweb="tab-list"] {
+        flex-wrap: wrap !important;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        flex: 1 !important;
+        min-width: 120px !important;
+    }
+
+    /* Mobile navigation buttons */
+    .stButton > button {
+        font-size: 0.7rem !important;
+        padding: 0.25rem 0.4rem !important;
+        height: 30px !important;
+        min-height: 30px !important;
+        max-height: 30px !important;
+        letter-spacing: 0px !important;
+    }
+
+    .row-widget.stHorizontal {
+        gap: 0.2rem !important;
+    }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .stTabs [data-baseweb="tab-panel"] form {
+        max-width: 450px !important;
+        width: 85% !important;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
+    }
+}
+
+/* Large screen optimization */
+@media (min-width: 1200px) {
+    .block-container {
+        max-width: 1400px !important;
+    }
+
+    .feature-grid {
+        max-width: 1200px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* UPDATED: Enhanced tab focus and accessibility */
+.stTabs [data-baseweb="tab"]:focus {
+    outline: 2px solid #8b5fbf !important;
+    outline-offset: 2px !important;
+}
+
+.stTabs [data-baseweb="tab"]:focus-visible {
+    outline: 2px solid #8b5fbf !important;
+    outline-offset: 2px !important;
+}
+
+/* Tab transition animations */
+.stTabs [data-baseweb="tab-panel"] {
+    animation: fadeIn 0.3s ease-in-out !important;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* UPDATED: Tab indicator for better visual feedback - Purple */
+.stTabs [aria-selected="true"]::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -2px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-left: 8px solid transparent !important;
+    border-right: 8px solid transparent !important;
+    border-bottom: 8px solid #8b5fbf !important;
+    z-index: 10 !important;
+}
+
+/* Tab loading states */
+.stTabs [data-baseweb="tab"][aria-busy="true"] {
+    opacity: 0.7 !important;
+    cursor: wait !important;
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%) !important;
+}
+
+/* Tab disabled state */
+.stTabs [data-baseweb="tab"][aria-disabled="true"] {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    background: linear-gradient(145deg, #374151, #4b5563) !important;
+    color: #9ca3af !important;
+}
+
+.stTabs [data-baseweb="tab"][aria-disabled="true"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: linear-gradient(145deg, #374151, #4b5563) !important;
+}
+
+/* Tab content enhanced styling */
+.stTabs [data-baseweb="tab-panel"] > div {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* UPDATED: Special styling for tab badges/counters - Purple theme */
+.tab-badge {
+    background: #8b5fbf !important;
+    color: white !important;
+    border-radius: 50% !important;
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.7rem !important;
+    font-weight: bold !important;
+    margin-left: 0.5rem !important;
+    min-width: 1.2rem !important;
+    text-align: center !important;
+    display: inline-block !important;
+}
+
+/* Tab overflow handling for many tabs */
+.stTabs [data-baseweb="tab-list"] {
+    overflow-x: auto !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: #667eea transparent !important;
+}
+
+.stTabs [data-baseweb="tab-list"]::-webkit-scrollbar {
+    height: 4px !important;
+}
+
+.stTabs [data-baseweb="tab-list"]::-webkit-scrollbar-track {
+    background: transparent !important;
+}
+
+.stTabs [data-baseweb="tab-list"]::-webkit-scrollbar-thumb {
+    background: #667eea !important;
+    border-radius: 2px !important;
+}
+
+.stTabs [data-baseweb="tab-list"]::-webkit-scrollbar-thumb:hover {
+    background: #5a6fd8 !important;
+}
+
+/* Enhanced tab spacing and alignment */
+.stTabs [data-baseweb="tab"]:first-child {
+    margin-left: 0 !important;
+}
+
+.stTabs [data-baseweb="tab"]:last-child {
+    margin-right: 0 !important;
+}
+
+/* Tab content minimum height to prevent jumping */
+.stTabs [data-baseweb="tab-panel"] {
+    min-height: 200px !important;
+}
+
+/* UPDATED: Dark mode specific tab adjustments */
+@media (prefers-color-scheme: dark) {
+    .stTabs [data-baseweb="tab"] {
+        background: linear-gradient(145deg, #3a3a4a, #4a4a6a) !important;
+    }
+
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #7a4fa8 0%, #6a4190 100%) !important;
+    }
+}
+
+/* UPDATED: High contrast mode support */
+@media (prefers-contrast: high) {
+    .stTabs [data-baseweb="tab"] {
+        border: 2px solid #ffffff !important;
+        background: #000000 !important;
+        color: #ffffff !important;
+    }
+
+    .stTabs [aria-selected="true"] {
+        background: #8b5fbf !important;
+        color: #ffffff !important;
+        border: 2px solid #8b5fbf !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .stTabs [data-baseweb="tab"] {
+        transition: none !important;
+    }
+
+    .stTabs [data-baseweb="tab"]:hover {
+        transform: none !important;
+    }
+
+    .stTabs [data-baseweb="tab-panel"] {
+        animation: none !important;
+    }
+
+    .stButton > button {
+        transition: none !important;
+    }
+
+    .stButton > button:hover {
+        transform: none !important;
+    }
+}
+
+/* Print styles for tabs */
+@media print {
+    .stTabs [data-baseweb="tab-list"] {
+        display: none !important;
+    }
+
+    .stTabs [data-baseweb="tab-panel"] {
+        display: block !important;
+        background: white !important;
+        color: black !important;
+    }
+
+    .stButton {
+        display: none !important;
+    }
+}
