@@ -51,7 +51,7 @@ def load_css(file_name):
         st.error(f" Error loading CSS: {e}")
 
 #  LOAD THE EXTERNAL CSS
-load_css('../YARDI_WEBAPP_FINAL/styles.css')
+load_css('styles.css')
 
 # Add navigation tab styling
 st.markdown("""
